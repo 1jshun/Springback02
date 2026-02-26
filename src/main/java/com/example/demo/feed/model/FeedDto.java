@@ -28,12 +28,16 @@ public class FeedDto {
         private Long idx;
         private String title;
         private String contents;
+        private int likeCount;
+        private boolean isLikes;
 
         public static Res from(Feed entity) {
             return Res.builder()
                     .idx(entity.getIdx())
                     .title(entity.getTitle())
                     .contents(entity.getContents())
+                    .likeCount(entity.getLikesList().size())
+                    .isLikes(false)
                     .build();
         }
     }
